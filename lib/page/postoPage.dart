@@ -130,6 +130,7 @@ class _PostoPageState extends State<PostoPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     RaisedButton(
+                      color: Color.fromRGBO(173,216,230, 10),
                       onPressed: escolherCombustivel,
                       child: Text(" Comparar "),
                       shape: OutlineInputBorder(
@@ -137,6 +138,7 @@ class _PostoPageState extends State<PostoPage> {
                       ),
                     ),
                     RaisedButton(
+                      color: Color.fromRGBO(240,128,128, 10),
                       onPressed: limparCampos,
                       child: Text(" Limpar "),
                       shape: OutlineInputBorder(

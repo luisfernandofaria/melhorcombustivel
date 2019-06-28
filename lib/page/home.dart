@@ -13,7 +13,6 @@ class _HomeState extends State<Home> {
   PostoHelper helper = PostoHelper();
   List <Posto> _listaDePostos = List();
 
-
   void _showPostoPage({Posto posto}) async {
     final regPosto = await Navigator.push(
       context,
