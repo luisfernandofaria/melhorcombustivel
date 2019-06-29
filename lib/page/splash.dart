@@ -30,7 +30,7 @@ class _SplashHomeState extends State<SplashHome> {
             ),
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("assets/images/fuelgauge.jpg"))),
+                    image: AssetImage("assets/images/teste.jpg"))),
           )
         ],
       ),

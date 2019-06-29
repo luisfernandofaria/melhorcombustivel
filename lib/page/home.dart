@@ -13,7 +13,7 @@ class _HomeState extends State<Home> {
   PostoHelper helper = PostoHelper();
   List<Posto> _listaDePostos = List();
 
-  final brazilCurrency = new NumberFormat("#,##0.00", "en_US");
+  final brazilCurrency = new NumberFormat("0.0000", "en_US");
 
   void _showPostoPage({Posto posto}) async {
     final regPosto = await Navigator.push(
@@ -83,13 +83,14 @@ class _HomeState extends State<Home> {
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      "Preço do Álcool: " + _listaDePostos[index].valorAlcool ??
+                      "Preço do Álcool: R\$ " +
+                          _listaDePostos[index].valorAlcool.substring(2,3) + "," + _listaDePostos[index].valorAlcool.substring(3,5) ??
                           " - ",
                       style: TextStyle(fontSize: 15),
                     ),
                     Text(
-                      "Preço da Gasolina: " +
-                              _listaDePostos[index].valorGasolina ??
+                      "Preço da Gasolina: R\$ " +
+                             _listaDePostos[index].valorGasolina.substring(2,3) + "," + _listaDePostos[index].valorGasolina.substring(3,5) ??
                           " - ",
                       style: TextStyle(fontSize: 15),
                     ),

@@ -103,7 +103,7 @@ class _PostoPageState extends State<PostoPage> {
                 ),
                 TextField(
                   decoration:
-                      InputDecoration(labelText: "Álcool", prefixText: "R\$ "),
+                  InputDecoration(labelText: "Álcool", prefixText: "R\$ "),
                   keyboardType: TextInputType.numberWithOptions(),
                   onChanged: (text) {
                     _postoEdited = true;
