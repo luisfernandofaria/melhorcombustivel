@@ -25,6 +25,9 @@ class _SplashHomeState extends State<SplashHome> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
+            child: Center(
+
+            ),
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/fuelgauge.jpg"))),

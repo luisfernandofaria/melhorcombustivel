@@ -36,4 +36,6 @@ class Posto {
   String toString() {
     return 'Posto{id: $id, nome: $nome, valorAlcool: $valorAlcool, valorGasolina: $valorGasolina, resultado: $resultado, data: $data}';
   }
+
+
 }

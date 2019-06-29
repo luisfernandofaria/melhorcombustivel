@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:melhor_combustivel/model/posto.dart';
 import 'postoPage.dart';
 import 'package:melhor_combustivel/helpers/posto_helper.dart';
+import 'package:intl/intl.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -9,9 +10,10 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   PostoHelper helper = PostoHelper();
-  List <Posto> _listaDePostos = List();
+  List<Posto> _listaDePostos = List();
+
+  final brazilCurrency = new NumberFormat("#,##0.00", "en_US");
 
   void _showPostoPage({Posto posto}) async {
     final regPosto = await Navigator.push(
@@ -73,18 +75,30 @@ class _HomeState extends State<Home> {
                     Text(
                       _listaDePostos[index].nome ?? " - ",
                       style:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      _listaDePostos[index].data ?? " - ",
+                      "\n" + _listaDePostos[index].data ?? " - ",
                       style:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      _listaDePostos[index].resultado ?? " - ",
-                      style:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      "Preço do Álcool: " + _listaDePostos[index].valorAlcool ??
+                          " - ",
+                      style: TextStyle(fontSize: 15),
                     ),
+                    Text(
+                      "Preço da Gasolina: " +
+                              _listaDePostos[index].valorGasolina ??
+                          " - ",
+                      style: TextStyle(fontSize: 15),
+                    ),
+                    Text(
+                      "\nMelhor opção: " + _listaDePostos[index].resultado ??
+                          " - ",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    )
                   ],
                 ),
               )
@@ -92,8 +106,9 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-      onTap: (){
-        _showPostoPage(posto: _listaDePostos[index]);},
+      onTap: () {
+        _showPostoPage(posto: _listaDePostos[index]);
+      },
     );
   }
 
